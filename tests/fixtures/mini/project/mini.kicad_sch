@@ -1,0 +1,51 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(uuid "00000000-0000-0000-0000-000000000001")
+	(lib_symbols
+		(symbol "PCM_Mini_Parts:Derived"
+			(property "Reference" "U"
+				(at 0 5.08 0)
+			)
+			(property "Footprint" "PCM_Mini_Pkg:QFN-4"
+				(at 0 0 0)
+			)
+			(property "Datasheet" "https://example.com/mini/base.pdf"
+				(at 0 0 0)
+			)
+			(property "ki_fp_filters" "PCM_Mini_Pkg:QFN* Package_DFN:DFN*"
+				(at 0 0 0)
+			)
+			(symbol "Derived_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "IN")
+					(number "1")
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Mini_Parts:Derived")
+		(uuid "00000000-0000-0000-0000-000000000002")
+		(property "Reference" "U1"
+			(at 0 0 0)
+		)
+		(property "Footprint" "PCM_Mini_Pkg:QFN-4"
+			(at 0 0 0)
+		)
+		(property "Datasheet" "https://example.com/mini/base.pdf"
+			(at 0 0 0)
+		)
+	)
+	(sheet
+		(uuid "00000000-0000-0000-0000-000000000003")
+		(property "Sheetname" "Sub"
+			(at 0 0 0)
+		)
+		(property "Sheetfile" "sub.kicad_sch"
+			(at 0 0 0)
+		)
+	)
+)

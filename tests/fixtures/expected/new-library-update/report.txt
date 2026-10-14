@@ -1,0 +1,20 @@
+symbol     PCM_ACME_Regulator:LDO_A  ->  libs/Adopted.kicad_sym  (LDO_B, LDO_C)
+symbol     PCM_ACME_Regulator:LDO_B  ->  libs/Adopted.kicad_sym
+symbol     PCM_ACME_Regulator:LDO_C  ->  libs/Adopted.kicad_sym
+symbol     PCM_ACME_Sensor:Sensor  ->  libs/Adopted.kicad_sym
+footprint  PCM_ACME_Passive:C_0805_Special  ->  libs/Adopted.pretty/C_0805_Special.kicad_mod
+footprint  PCM_ACME_Package_DFN:DFN-6  ->  libs/Adopted.pretty/DFN-6.kicad_mod  (Sensor)
+footprint  PCM_ACME_Package_SO:SOIC-8  ->  libs/Adopted.pretty/SOIC-8.kicad_mod  (LDO_A, LDO_B)
+footprint  PCM_ACME_Package_SO:SOIC-8_EP  ->  libs/Adopted.pretty/SOIC-8_EP.kicad_mod  (LDO_C)
+3D model   ${KICAD10_3RD_PARTY}/3dmodels/com_github_acme_kicad-library/ACME_Package_DFN.3dshapes/DFN-6.wrl  ->  libs/Adopted.3dshapes/DFN-6.wrl  (DFN-6)
+3D model   ${KICAD10_3RD_PARTY}/3dmodels/com_github_acme_kicad-library/ACME_Package_SO.3dshapes/SOIC-8.wrl  ->  libs/Adopted.3dshapes/SOIC-8.wrl  (SOIC-8, SOIC-8_EP)
+3D model   ${KICAD10_3RD_PARTY}/3dmodels/com_github_acme_kicad-library/ACME_Passive.3dshapes/C_0805_Special.wrl  ->  libs/Adopted.3dshapes/C_0805_Special.wrl  (C_0805_Special)
+datasheet  ${KICAD10_3RD_PARTY}/resources/com_github_acme_kicad-library/sensor.pdf  ->  docs/sensor.pdf  (Sensor)
+datasheet  https://example.com/acme/dfn.pdf  ->  docs/dfn.pdf  (DFN-6)
+datasheet  https://example.com/acme/ldo.pdf  ->  docs/ldo.pdf  (LDO_A, LDO_B)
+register   Adopted  ->  sym-lib-table
+register   Adopted  ->  fp-lib-table
+relink     demo.kicad_sch  (15 references)
+relink     channel.kicad_sch  (12 references)
+relink     demo.kicad_pcb  (16 references)
+warning    datasheet is not a PDF, link kept: https://example.com/acme/ldo-c.pdf

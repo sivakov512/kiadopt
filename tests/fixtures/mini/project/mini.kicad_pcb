@@ -1,0 +1,37 @@
+(kicad_pcb
+	(version 20260206)
+	(generator "pcbnew")
+	(footprint "PCM_Mini_Pkg:QFN-4"
+		(layer "F.Cu")
+		(uuid "00000000-0000-0000-0000-000000000007")
+		(at 100 100)
+		(descr "QFN 4 pins, https://example.com/mini/qfn.pdf")
+		(property "Reference" "U1"
+			(at 0 0 0)
+			(layer "F.SilkS")
+		)
+		(property "Datasheet" "https://example.com/mini/qfn.pdf"
+			(at 0 0 0)
+			(layer "F.Fab")
+		)
+		(model "${KICAD8_3RD_PARTY}/3dmodels/com_example_mini/QFN-4.step"
+			(offset
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "Resistor_SMD:R_0603"
+		(layer "F.Cu")
+		(uuid "00000000-0000-0000-0000-000000000008")
+		(at 110 100)
+		(property "Reference" "R1"
+			(at 0 0 0)
+			(layer "F.SilkS")
+		)
+		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603.step"
+			(offset
+				(xyz 0 0 0)
+			)
+		)
+	)
+)

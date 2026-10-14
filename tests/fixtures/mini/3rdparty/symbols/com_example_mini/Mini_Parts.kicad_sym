@@ -1,0 +1,43 @@
+(kicad_symbol_lib
+	(version 20251024)
+	(generator "mini")
+	(symbol "Base"
+		(property "Reference" "U"
+			(at 0 5.08 0)
+		)
+		(property "Footprint" "PCM_Mini_Pkg:QFN-4"
+			(at 0 0 0)
+		)
+		(property "Datasheet" "https://example.com/mini/base.pdf"
+			(at 0 0 0)
+		)
+		(property "ki_fp_filters" "PCM_Mini_Pkg:QFN* Package_DFN:DFN*"
+			(at 0 0 0)
+		)
+		(symbol "Base_1_1"
+			(pin input line
+				(at -5.08 0 0)
+				(length 2.54)
+				(name "IN")
+				(number "1")
+			)
+		)
+	)
+	(symbol "Derived"
+		(extends "Base")
+		(property "Reference" "U"
+			(at 0 5.08 0)
+		)
+		(property "Datasheet" "https://example.com/mini/base.pdf"
+			(at 0 0 0)
+		)
+	)
+	(symbol "Lonely"
+		(property "Reference" "U"
+			(at 0 5.08 0)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+		)
+	)
+)

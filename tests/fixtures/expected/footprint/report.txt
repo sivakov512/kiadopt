@@ -1,0 +1,2 @@
+footprint  PCM_ACME_Package_SO:SOIC-8_EP  ->  libs/Local.pretty/SOIC-8_EP.kicad_mod
+3D model   ${KICAD10_3RD_PARTY}/3dmodels/com_github_acme_kicad-library/ACME_Package_SO.3dshapes/SOIC-8.wrl  ->  libs/Local.3dshapes/SOIC-8.wrl  (SOIC-8_EP)

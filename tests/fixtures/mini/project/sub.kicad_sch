@@ -1,0 +1,48 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(uuid "00000000-0000-0000-0000-000000000004")
+	(lib_symbols
+		(symbol "PCM_Mini_Gone:Ghost"
+			(property "Reference" "U"
+				(at 0 5.08 0)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+			)
+			(symbol "Ghost_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "IN")
+					(number "1")
+				)
+			)
+		)
+		(symbol "Device:R"
+			(property "Reference" "R"
+				(at 2.032 0 90)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_Mini_Gone:Ghost")
+		(uuid "00000000-0000-0000-0000-000000000005")
+		(property "Reference" "U2"
+			(at 0 0 0)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(uuid "00000000-0000-0000-0000-000000000006")
+		(property "Reference" "R1"
+			(at 0 0 0)
+		)
+		(property "Footprint" "PCM_Mini_Pkg:QFN-4"
+			(at 0 0 0)
+		)
+	)
+)

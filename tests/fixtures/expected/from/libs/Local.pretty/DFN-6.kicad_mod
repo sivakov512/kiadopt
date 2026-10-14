@@ -1,0 +1,131 @@
+(footprint "DFN-6"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "DFN, 6 pins, 2x2 mm, see ${KIPRJMOD}/docs/dfn.pdf")
+	(property "Reference" "REF**"
+		(at 0 -2.5 0)
+		(layer "F.SilkS")
+		(uuid "571c0c35-2c13-533b-a6b4-3efb2fdfb239")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "DFN-6"
+		(at 0 2.5 0)
+		(layer "F.Fab")
+		(uuid "ce69ded4-ea10-5dfb-a8dc-49fb7ecbbab6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9e19924e-79cc-5500-aecd-f5200649d079")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "331c7d48-9d44-5324-8ece-6f7e7ec1b4ce")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -1.5 -1.5)
+		(end 1.5 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "55f360c9-d15f-591c-95b1-66aac833519e")
+	)
+	(fp_rect
+		(start -1 -1)
+		(end 1 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "5046d0c3-3e8a-5db0-a388-43e000a743b3")
+	)
+	(pad "1" smd roundrect
+		(at -1 -0.65)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "e02561d3-8d2f-5e93-8645-ce6124cc69c3")
+	)
+	(pad "2" smd roundrect
+		(at -1 0)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "7d26e333-581b-5dfa-931c-23837ba0f36a")
+	)
+	(pad "3" smd roundrect
+		(at -1 0.65)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "7776976c-1bc1-581a-b7a7-d12dd6240dec")
+	)
+	(pad "4" smd roundrect
+		(at 1 0.65)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "4be1bbac-8374-52ba-8282-38963cde3c6b")
+	)
+	(pad "5" smd roundrect
+		(at 1 0)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "c8d6f7b4-43f7-509f-b39a-c347232470a1")
+	)
+	(pad "6" smd roundrect
+		(at 1 -0.65)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "aad6452b-b009-50b2-a973-7a593a11898c")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/libs/Local.3dshapes/DFN-6.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
