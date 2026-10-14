@@ -174,3 +174,27 @@ def test_curl_downloads_too(tmp_path: Path) -> None:
 def test_raises_curl_error_if_both_fail() -> None:
     with pytest.raises(OSError, match=r"(?i)protocol"):
         fetch("kiadopt-test://nowhere/doc.pdf")
+
+
+@pytest.mark.parametrize(
+    ("descr", "expected"),
+    [
+        ("Datasheet: {url}.", "Datasheet: {local}."),
+        ("QFN 4 pins ({url}), see above", "QFN 4 pins ({local}), see above"),
+        ("Archive: {url}.zip", "Archive: {url}.zip"),
+    ],
+    ids=["full-stop", "parentheses", "not-a-pdf"],
+)
+def test_finds_links_in_description_followed_by_punctuation(
+    mini: Path, mini_env: KicadEnv, adopt: Adopt, descr: str, expected: str
+) -> None:
+    url, local = "https://example.com/mini/qfn.pdf", "${KIPRJMOD}/docs/qfn.pdf"
+    third, env = editable_third_party(mini, mini_env)
+    footprint = third / "footprints/com_example_mini/Mini_Pkg.pretty/QFN-4.kicad_mod"
+    text = read(footprint).replace(f"QFN 4 pins, {url}", descr.format(url=url))
+    footprint.write_text(text)
+
+    adopt(mini, env, footprints=["PCM_Mini_Pkg:QFN-4"], datasheets_dir=mini / "docs")
+
+    copied = read(mini / "libs/Local.pretty/QFN-4.kicad_mod")
+    assert f'(descr "{expected.format(url=url, local=local)}")' in copied
