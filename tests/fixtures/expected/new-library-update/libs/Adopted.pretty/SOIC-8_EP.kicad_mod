@@ -1,0 +1,145 @@
+(footprint "SOIC-8_EP"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "SOIC, 8 pins, exposed pad")
+	(property "Reference" "REF**"
+		(at 0 -3.5 0)
+		(layer "F.SilkS")
+		(uuid "65e7a1e0-00b6-51b0-abc1-98636808f1dd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SOIC-8_EP"
+		(at 0 3.5 0)
+		(layer "F.Fab")
+		(uuid "15a3654b-92d0-54f5-9cd8-e33192641d5b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0e7b5593-3654-5cb3-a143-cb3dab8c41ed")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0250ecbf-c25b-5dc7-b182-6f35786bdddd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -3 -2.5)
+		(end 3 2.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "83d15cd4-148f-565e-8f71-ddfdc5664d0f")
+	)
+	(fp_rect
+		(start -2.5 -2)
+		(end 2.5 2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "5934cfdd-d0e5-56e6-9078-b896815dfbd2")
+	)
+	(pad "1" smd roundrect
+		(at -2.7 -1.905)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "e3039015-667e-5939-9666-e70430e9aedb")
+	)
+	(pad "2" smd roundrect
+		(at -2.7 -0.635)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "0c02943d-798a-5a2f-831d-1c45507f2439")
+	)
+	(pad "3" smd roundrect
+		(at -2.7 0.635)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "188887f3-cc10-5fc6-8701-31631d544631")
+	)
+	(pad "4" smd roundrect
+		(at -2.7 1.905)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "42d400e6-9f29-5bbd-b51e-ab5037dfeeed")
+	)
+	(pad "5" smd roundrect
+		(at 2.7 1.905)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "fb636a96-e2c4-5618-84b7-cc969c6f8a73")
+	)
+	(pad "6" smd roundrect
+		(at 2.7 0.635)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "b5f042c0-90c9-5725-ac3d-6863425cb783")
+	)
+	(pad "7" smd roundrect
+		(at 2.7 -0.635)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "ddc4294c-258e-5336-8c46-b02494dc1090")
+	)
+	(pad "8" smd roundrect
+		(at 2.7 -1.905)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "1b556603-718d-550f-b981-88d87ad5c3b3")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/libs/Adopted.3dshapes/SOIC-8.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

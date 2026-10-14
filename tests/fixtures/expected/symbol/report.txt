@@ -1,0 +1,2 @@
+symbol     PCM_ACME_Sensor:Sensor  ->  libs/Local.kicad_sym
+datasheet  ${KICAD10_3RD_PARTY}/resources/com_github_acme_kicad-library/sensor.pdf  ->  docs/sensor.pdf  (Sensor)

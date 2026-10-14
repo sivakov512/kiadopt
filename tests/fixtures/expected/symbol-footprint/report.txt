@@ -1,0 +1,4 @@
+symbol     PCM_ACME_Regulator:LDO_A  ->  libs/Local.kicad_sym  (LDO_B)
+symbol     PCM_ACME_Regulator:LDO_B  ->  libs/Local.kicad_sym
+footprint  PCM_ACME_Package_SO:SOIC-8  ->  libs/Local.pretty/SOIC-8.kicad_mod  (LDO_A, LDO_B)
+3D model   ${KICAD8_3RD_PARTY}/3dmodels/com_github_acme_kicad-library/ACME_Package_SO.3dshapes/SOIC-8.wrl  ->  libs/Local.3dshapes/SOIC-8.wrl  (SOIC-8)

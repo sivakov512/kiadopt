@@ -1,0 +1,20 @@
+(footprint "QFN-4"
+	(version 20260206)
+	(generator "mini")
+	(layer "F.Cu")
+	(descr "QFN 4 pins, https://example.com/mini/qfn.pdf")
+	(property "Datasheet" "https://example.com/mini/qfn.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+	)
+	(pad "1" smd rect
+		(at -1 0)
+		(size 0.5 0.5)
+		(layers "F.Cu")
+	)
+	(model "${KICAD8_3RD_PARTY}/3dmodels/com_example_mini/QFN-4.step"
+		(offset
+			(xyz 0 0 0)
+		)
+	)
+)

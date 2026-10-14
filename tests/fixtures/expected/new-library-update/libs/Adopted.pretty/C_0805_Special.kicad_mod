@@ -1,0 +1,103 @@
+(footprint "C_0805_Special"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Capacitor 0805 with a custom model")
+	(property "Reference" "REF**"
+		(at 0 -2.125 0)
+		(layer "F.SilkS")
+		(uuid "3e4d10e3-4971-56b0-bda5-84f3e980ebe1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "C_0805_Special"
+		(at 0 2.125 0)
+		(layer "F.Fab")
+		(uuid "5da2848d-bc90-58d4-a579-34419c295b52")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "00d16aff-cfc7-5958-ac7a-3616c2af193c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "acd4ff5c-f73e-59df-af1b-73038f895783")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -1.5 -1.125)
+		(end 1.5 1.125)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "33bb8c81-bd6c-5f6a-86aa-dc2de62f9f43")
+	)
+	(fp_rect
+		(start -1 -0.625)
+		(end 1 0.625)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e002d02e-9ed4-5035-b48f-ccc838728d42")
+	)
+	(pad "1" smd roundrect
+		(at -1 0)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "0df25354-59f3-528f-9b23-372f0835d428")
+	)
+	(pad "2" smd roundrect
+		(at 1 0)
+		(size 1.2 0.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "5882e4c2-c94b-5ef8-8255-aee3e315a5a1")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/libs/Adopted.3dshapes/C_0805_Special.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

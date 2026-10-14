@@ -1,0 +1,8 @@
+{
+  "environment": {
+    "vars": {
+      "MINI_DOCS": "/opt/mini/docs",
+      "KICAD10_3RD_PARTY": "/from/kicad_common/3rdparty"
+    }
+  }
+}
