@@ -2,7 +2,7 @@ name: Release
 
 # Ships a published release: the CI checks run against the tag, the sdist and
 # wheel are attached to the release and the formula in sivakov512/homebrew-tap
-# is pointed at the new sdist. The manual dispatch rebuilds a tag by hand.
+# is pointed at the new wheel. The manual dispatch rebuilds a tag by hand.
 on:
   release:
     types: [published]
@@ -40,27 +40,29 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: gh release upload "$TAG" dist/* --clobber --repo "$GITHUB_REPOSITORY"
 
-  # Point the tap at what was actually published: download the sdist back from
-  # the release, hash it and rewrite the formula.
+  # Point the tap at what was actually published: download the wheel back from
+  # the release, hash it and rewrite the formula. The formula installs the
+  # wheel as is, so Homebrew builds nothing and needs no build dependencies.
   tap:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download the published sdist
+      - name: Download the published wheel
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "kiadopt-*.tar.gz"
+        run: gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "kiadopt-*.whl"
       - name: Bump the formula
         env:
           GH_TOKEN: ${{ secrets.RELEASER_TOKEN }}
         run: |
           VERSION="${TAG#v}"
-          URL="https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/kiadopt-$VERSION.tar.gz"
-          SHA256=$(sha256sum "kiadopt-$VERSION.tar.gz" | cut -d' ' -f1)
+          WHEEL="kiadopt-$VERSION-py3-none-any.whl"
+          URL="https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/$WHEEL"
+          SHA256=$(sha256sum "$WHEEL" | cut -d' ' -f1)
           FORMULA=/repos/sivakov512/homebrew-tap/contents/Formula/kiadopt.rb
           gh api "$FORMULA" > formula.json
           jq -r .content formula.json | base64 -d > kiadopt.rb
-          sed -i "s|^  url .*|  url \"$URL\"|" kiadopt.rb
+          sed -i "s|^  url .*|  url \"$URL\", using: :nounzip|" kiadopt.rb
           sed -i "s/^  sha256 .*/  sha256 \"$SHA256\"/" kiadopt.rb
           gh api -X PUT "$FORMULA" \
             -f message="chore: bump kiadopt to $VERSION" \

@@ -28,8 +28,6 @@ dev = [
     "ruff>=0.6",
 ]
 
-# setuptools because Homebrew builds without build isolation and ships it as a
-# formula (python-setuptools); hatchling has no formula there.
 [build-system]
 requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"

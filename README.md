@@ -123,4 +123,4 @@ To release, bump `version` in `pyproject.toml`, merge it and publish a GitHub
 release `vX.Y.Z`. The release workflow runs the checks on the tag, attaches the
 sdist and wheel and points the formula in
 [sivakov512/homebrew-tap](https://github.com/sivakov512/homebrew-tap) at the new
-sdist.
+wheel.
