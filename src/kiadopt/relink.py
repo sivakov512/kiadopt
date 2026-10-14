@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from kiadopt import sexpr
 from kiadopt.document import Document
 
-PDF_URL = re.compile(r"https?://\S+?\.pdf(?=$|[\s),;])", re.IGNORECASE)
+PDF_URL = re.compile(r"https?://\S+?\.pdf(?=[.,;:)]*(?:\s|$))", re.IGNORECASE)
 
 Edit = tuple[sexpr.Atom, str]
 
