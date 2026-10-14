@@ -28,12 +28,14 @@ dev = [
     "ruff>=0.6",
 ]
 
-[tool.hatch.build.targets.sdist]
-include = ["src", "tests", "README.md", "LICENSE"]
-
+# setuptools because Homebrew builds without build isolation and ships it as a
+# formula (python-setuptools); hatchling has no formula there.
 [build-system]
-requires = ["hatchling>=1.26"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+kiadopt = ["py.typed"]
 
 [tool.ruff]
 line-length = 100
