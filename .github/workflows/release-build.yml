@@ -1,4 +1,4 @@
-name: Release
+name: Release build
 
 # Ships a published release: the CI checks run against the tag, the sdist and
 # wheel are attached to the release and the formula in sivakov512/homebrew-tap
