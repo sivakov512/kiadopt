@@ -1,0 +1,70 @@
+name: Release
+
+# Ships a published release: the CI checks run against the tag, the sdist and
+# wheel are attached to the release and the formula in sivakov512/homebrew-tap
+# is pointed at the new sdist. The manual dispatch rebuilds a tag by hand.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to build (e.g. v0.1.1)"
+        required: true
+
+permissions:
+  contents: write
+
+env:
+  TAG: ${{ github.event.release.tag_name || inputs.tag }}
+
+jobs:
+  checks:
+    uses: ./.github/workflows/ci.yml
+    with:
+      ref: ${{ github.event.release.tag_name || inputs.tag }}
+
+  build:
+    needs: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+      - uses: astral-sh/setup-uv@v6
+      - name: Check that the version matches the tag
+        run: test "v$(uv version --short)" = "$TAG"
+      - run: uv build
+      - name: Attach to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$TAG" dist/* --clobber --repo "$GITHUB_REPOSITORY"
+
+  # Point the tap at what was actually published: download the sdist back from
+  # the release, hash it and rewrite the formula.
+  tap:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the published sdist
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "kiadopt-*.tar.gz"
+      - name: Bump the formula
+        # Through the Contents API, not a git push: the commit is authored by the
+        # token's robot account and signed by GitHub on its behalf.
+        env:
+          GH_TOKEN: ${{ secrets.RELEASER_TOKEN }}
+        run: |
+          VERSION="${TAG#v}"
+          URL="https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/kiadopt-$VERSION.tar.gz"
+          SHA256=$(sha256sum "kiadopt-$VERSION.tar.gz" | cut -d' ' -f1)
+          FORMULA=/repos/sivakov512/homebrew-tap/contents/Formula/kiadopt.rb
+          gh api "$FORMULA" > formula.json
+          jq -r .content formula.json | base64 -d > kiadopt.rb
+          sed -i "s|^  url .*|  url \"$URL\"|" kiadopt.rb
+          sed -i "s/^  sha256 .*/  sha256 \"$SHA256\"/" kiadopt.rb
+          gh api -X PUT "$FORMULA" \
+            -f message="chore: bump kiadopt to $VERSION" \
+            -f content="$(base64 -w0 kiadopt.rb)" \
+            -f sha="$(jq -r .sha formula.json)"

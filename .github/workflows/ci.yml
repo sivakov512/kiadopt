@@ -4,12 +4,20 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_call:
+    inputs:
+      ref:
+        description: "Git ref to check, the release workflow passes its tag"
+        type: string
+        default: ""
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
       - uses: astral-sh/setup-uv@v6
       - run: uv run ruff check
       - run: uv run ruff format --check
@@ -26,6 +34,8 @@ jobs:
       UV_PYTHON: ${{ matrix.python }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
       - uses: astral-sh/setup-uv@v6
       - run: uv run pytest --cov
 
@@ -33,6 +43,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
       - name: Install KiCad 10
         run: |
           sudo add-apt-repository --yes ppa:kicad/kicad-10.0-releases
